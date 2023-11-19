@@ -3,18 +3,18 @@
 $lat    = -6.200000; //Jakarta Latitude
 $long   = 106.816666; //Jakarta Longitude
 
-// use your API key here
+// use API Key from (openweathermap.org) here
 $key  = "";
 
 // URL of the API endpoint
 $apiUrl = "api.openweathermap.org/data/2.5/forecast?lat=$lat&lon=$long&appid=$key";
+
 // Initialize cURL session
 $ch     = curl_init($apiUrl);
 // Set cURL options
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 // Execute cURL session and fetch the response
 $response = curl_exec($ch);
-// $data = json_decode($response);
 // Check for cURL errors
 if (curl_errno($ch)) {
     echo 'Curl error: ' . curl_error($ch);
